@@ -1,0 +1,491 @@
+
+INTRO:
+SCREEN 2
+CLS
+SCREEN 0
+CLS
+COLOR 0,7
+LOCATE 2,32
+PRINT "    NDLab    "
+LOCATE 1,32
+PRINT "þ           þ"
+LOCATE 3,32
+PRINT "þ           þ"
+COLOR 7,0
+LOCATE 5,33
+PRINT " APRESENTA"
+FOR I=1 TO 1000
+NEXT I
+PRINT
+PRINT
+PRINT "                  ³±  ³± ³±±±± ³±±±  ³±  ³± ³±    ³±±  ³±±±±"
+PRINT "                  ³±± ³± ³±    ³± ³± ³±  ³± ³±   ³± ³± ³±"
+PRINT "           ³±³±³±³±±±³±±±³±³±³±³±±±±³±±±"
+PRINT "                  ³° ³°° ³°    ³° ³° ³°  ³° ³°   ³° ³° ³°"
+PRINT "                  ³°  ³° ³°°°° ³°°°   ³°°°  ³°°°°³° ³° ³°°°°"
+PRINT
+PRINT
+PRINT "                           þ O LIVRO DO NEVOEIRO þ"
+PRINT
+PRINT
+PRINT "                 If you want the English version write to me!"
+PRINT "                   See adress/phone in Main Menu Option no.3"
+LOCATE 22,1
+PRINT "                       þ (C)1995 NILSON DE LOURENCO þ"
+KKK:X$=INKEY$
+IF X$="" THEN KKK:
+MENU:
+CLS
+COLOR 0,7
+FOR I=0 TO 59
+  LOCATE 0,I
+  PRINT "þ NEBULAE MAIN MENU þ"
+NEXT I
+COLOR 7,0
+
+PRINT "                  ³±  ³± ³±±±± ³±±±  ³±  ³± ³±    ³±±  ³±±±±"
+PRINT "                  ³±± ³± ³±    ³± ³± ³±  ³± ³±   ³± ³± ³±"
+PRINT "           ³±³±³±³±±±³±±±³±³±³±³±±±±³±±±"
+PRINT "                  ³° ³°° ³°    ³° ³° ³°  ³° ³°   ³° ³° ³°"
+PRINT "                  ³°  ³° ³°°°° ³°°°   ³°°°  ³°°°°³° ³° ³°°°°"
+PRINT
+
+PRINT "                           þ O LIVRO DO NEVOEIRO þ"
+
+PRINT
+PRINT "                          1. LER PAGINA DIVINATORIA"
+PRINT
+PRINT
+PRINT "                          2. INSTRUCOES"
+PRINT
+PRINT
+PRINT "                          3. SOBRE O PROGRAMA(DOR)"
+PRINT
+PRINT
+PRINT "                          0. RETORNO AO D.O.S."
+KKKK:
+X$=INKEY$
+   IF X$="" THEN KKKK:
+   IF X$="1" THEN GO:
+   IF X$="2" THEN INST:
+   IF X$="3" THEN PROG:
+   IF X$="0" THEN EXI:
+GOTO KKKK:
+INST:
+CLS
+COLOR 0,7
+PRINT "     þ INSTRUCOES þ                                                  "
+COLOR 7,0
+LOCATE 3,0
+PRINT "   Nebulae,ou 'O LIVRO DO NEVOEIRO' e' um programa de divinacao."
+PRINT "   Para acessa-lo voce deve escolher a opcao numero 1 do menu."
+PRINT "   Em seguida escreva o seu nome completo e digiter ENTER."
+PRINT "   Feito isso,escreva a pergunta (mais sucinta possivel) e pressione"
+PRINT "   ENTER."
+PRINT "   Em questao de segundos (necessarios) o seu micro ira' seleccionar"
+PRINT "   a pagina do livro que corresponde `a resposta."
+PRINT
+PRINT "                PRESSIONE QUALQUER TECLA"
+KK:
+X$=INKEY$
+IF X$="" THEN KK:
+GOTO MENU:
+PROG:
+CLS
+COLOR 0,7
+PRINT "   þ  SOBRE O PROGRAMA(DOR) þ                                    "
+COLOR 7,0
+LOCATE 3,0
+PRINT " Este programa foi feito para pessoas que acreditam em divinacao"
+PRINT " e tudo o que e' relacionado a misticismo."
+PRINT " O LIVRO DO NEVOEIRO e' um livro de 20 paginas."
+PRINT " Serve para efectuar consultas,dar respostas...sei la'."
+PRINT " Se voce se interessou pelo programa contacte:"
+PRINT
+PRINT " NDLAB-NILSON DE LOURENCO LAB"
+PRINT " R.Dr.Joao Alves de Lima 194 casa 5 Bras"
+PRINT " Cep 03052-060 SAO PAULO SP"
+PRINT
+PRINT " PHONE (011)692.89.50"
+PRINT
+PRINT " Este programa foi desenvolvido em linguagem ASIC."
+PRINT
+PRINT "  PRESSIONE QUALQUER TECLA"
+GOTO KK:
+GO:
+CLS
+COLOR 0,7
+PRINT "                       PAGINA DIVINATORIA                           "
+COLOR 7,0
+PRINT
+PRINT
+PRINT "      INSERTE O SEU NOME COMPLETO ";
+
+INPUT N$;
+      IF N$="" THEN MENU:
+PRINT
+PRINT "      INSERTE A PERGUNTA DESEJADA ";
+
+INPUT P$;
+      IF P$="" THEN MENU:
+
+X=LEN(N$)
+X1=LEN(P$)
+PRINT
+PRINT "       UM MOMENTO ENQUANTO SELECCIONO A PAGINA DESEJADA "
+PRINT "       SEU DESTINO ESTA' SENDO ANALISADO NESTE MOMENTO! "
+BEEP
+BEEP
+BEEP
+FOR I=1 TO 1000
+NEXT I
+XXX=(X+X1)
+PART1:
+IDX=RND(0)
+IDX=IDX MOD XXX
+IF IDX>20 THEN PART1:
+CLS
+IF IDX=0 THEN PAG0:
+IF IDX=1 THEN PAG1:
+IF IDX=2 THEN PAG2:
+IF IDX=3 THEN PAG3:
+IF IDX=4 THEN PAG4:
+IF IDX=5 THEN PAG5:
+IF IDX=6 THEN PAG6:
+IF IDX=7 THEN PAG7:
+IF IDX=8 THEN PAG8:
+IF IDX=9 THEN PAG9:
+IF IDX=10 THEN PAG10:
+IF IDX=11 THEN PAG11:
+IF IDX=12 THEN PAG12:
+IF IDX=13 THEN PAG13:
+IF IDX=14 THEN PAG14:
+IF IDX=15 THEN PAG15:
+IF IDX=16 THEN PAG16:
+IF IDX=17 THEN PAG17:
+IF IDX=18 THEN PAG18:
+IF IDX=19 THEN PAG19:
+IF IDX=20 THEN PAG20:
+GOTO MENU:
+PAG0:
+CLS
+COLOR 0,7
+PRINT "       EPISODIO PRIMORDIAL - A MADRUGADA FRIA               "
+COLOR 7,0
+PRINT
+PRINT "   A madrugada e' gelada e o nevoeiro tudo envolve..."
+PRINT " A noite e' misteriosa,o silencio e' profundo..."
+PRINT " Nao vale a pena se aventurar.E' melhor esperar para que o dia"
+PRINT " defina tudo com sua luz,e transforme o que parecia terror e medo"
+PRINT " em novos horizontes."
+PRINT " A madrugada e' gelada e certamente nao e' a melhor hora para agir."
+PRINT " E' melhor esperar pela luz,que certamente vira' dentro de algumas"
+PRINT " horas..."
+GOTO ADV:
+PAG1:
+COLOR 0,7
+PRINT "       EPISODIO PRIMEIRO - A ARVORE DE OUTONO               "
+COLOR 7,0
+PRINT
+PRINT "   O vento e' frio e seco. As folhas caem pouco a pouco."
+PRINT "O Outono e' assim...tem suas leis e tem que ser seguidas para que"
+PRINT "a Primavera possa vir."
+PRINT "No momento tudo parece acabar,tudo parece no fim,tristeza."
+PRINT "Mas na verdade e' um curso natural...E a Primavera vira'."
+PRINT "A Arvore deve se preparar para o Inverno pois sera' pior que o"
+PRINT "Outono,mas deve se lembrar que e' PASSAGEIRO."
+PRINT "Tudo e' efemero."
+PRINT "Ja' quase nao ha' folhas,mas se houvessem,o curso seria desviado e"
+PRINT "embora parecesse bom,haveria um desastre mil vezes pior no futuro."
+GOTO ADV:
+
+PAG2:
+COLOR 0,7
+PRINT "      EPISODIO SEGUNDO - A PESTE                            "
+COLOR 7,0
+PRINT
+PRINT "  A peste,a maldicao caiu sobre a aldeia. Ela deve ser abandonada."
+PRINT "Nao se deve olhar para as terras deixadas para tras...nao se deve"
+PRINT "pensar sequer nas riquezas...Morte."
+PRINT "A vida e' a melhor riqueza. E para isso,deve-se sair."
+PRINT "Nao fique na aldeia."
+PRINT "Diga adeus ao passado e ande para a frente,com orgulho de estar"
+PRINT "vivo...A estrada que o acompanha lhe trara' belas surpresas."
+PRINT "Deixe que a peste seja passado e apenas passado."
+GOTO ADV:
+
+PAG3:
+COLOR 0,7
+PRINT "     EPISODIO TERCEIRO - O ESTRANHO NO CAMINHO              "
+COLOR 7,0
+PRINT
+PRINT " Subitamente,no caminho lugubre que voce segue,uma figura,vulto,"
+PRINT "uma sombra vaga interrompe a pouca luz que ainda iluminava a trilha."
+PRINT "E' uma figura estranha e nao e' nada confortadora."
+PRINT "Voce deve conter sua curiosidade e ficar parado esperando."
+PRINT "Caso a figura desapareca,tudo bem."
+PRINT "Caso ela continue,espere que ela venha ate'voce e se identifique."
+PRINT "Qualquer coisa,esteja pronto para a defesa."
+PRINT "Pode ser uma infeliz surpresa."
+GOTO ADV:
+PAG4:
+COLOR 0,7
+PRINT "      EPISODIO QUARTO - A TRISTEZA COMO CHUVA               "
+COLOR 7,0
+PRINT "   A chuva cai e a tristeza se abate cinzenta sobre voce."
+PRINT "De nada adianta chorar,de nada adianta fugir."
+PRINT "Mas e' inegavel que estes momentos sao bons e necessarios."
+PRINT "Nao deixe que perdurem ou se transformem em habitos."
+PRINT "Se levante! E' hora de pensar que tudo vai continuar se voce"
+PRINT "nao fizer nada para impedir."
+PRINT "Analize o motivo desta nuvem em sua consciencia.HA' UM."
+PRINT "Faca algo mas nao deixe que voce se deixe levar."
+PRINT "De um tempo mas aja."
+PRINT "AJA!!"
+GOTO ADV:
+PAG5:
+COLOR 0,7
+PRINT "      EPISODIO QUINTO - O SOL NASCE DEVAGAR                 "
+COLOR 7,0
+PRINT "  E' quase manha,e a noite passou."
+PRINT "Finalmente um pouco de esperanca."
+PRINT "Esperanca que e' fundamentada na coisa mais certa que temos:"
+PRINT "O INTERMINAVEL CICLO DA NATUREZA."
+PRINT "A noite acabou e pode ter certeza que tudo agora vai estar mais"
+PRINT "iluminado..."
+PRINT "Embora por vezes voce possa ter pensado que seria eterno,"
+PRINT "agora sabemos que nao era..."
+PRINT "BOA SORTE."
+
+GOTO ADV:
+PAG6:
+COLOR 0,7
+PRINT "       EPISODIO SEXTO - ILUSAO                              "
+COLOR 7,0
+PRINT "  Voce estava no caminho que pensava certo e de repente viu..."
+PRINT "viu que errou...Nao era essa a trilha..."
+PRINT "Voce se deixou levar por pequenos detalhes...Viu uma flor e pensou"
+PRINT "que seria este o caminho que o levaria ao lindo campo..."
+PRINT "NAO! Foi ilusao...Agora voce observa o campo cinzento,triste e "
+PRINT "melancolico...Foi enganado."
+PRINT "Nao e' um erro que nao deva ser perdoado...Voce errou e deve assum-"
+PRINT "ir...Nao resta outra saida,voce deve voltar."
+PRINT "Nao alimente esperancas,pois continuar andando o levara' `a mais"
+PRINT "completa escuridao. VOLTE!"
+GOTO ADV:
+PAG7:
+COLOR 0,7
+PRINT "      EPISODIO SETIMO - VALE A PENA CONTINUAR ?             "
+COLOR 7,0
+PRINT "  Voce andou andou andou,e chegou finalmente."
+PRINT "Acontece que nem sempre o que queriamos era o que queriamos."
+PRINT "Voce viu que tem estado lutando por algo que pode nao ter valido"
+PRINT "tanto esforco..."
+PRINT "O erro nao e' do objecto da luta e sim do que voce pensava sobre"
+PRINT "ele..."
+PRINT "E o erro pode ser que,voce so' gosta de uma coisa enquanto nao tem."
+PRINT "PENSE BEM..."
+PRINT "Tambem nao e' por ter lutado tanto que voce deve ficar com o que"
+PRINT "conseguiu...Use sua consciencia..."
+GOTO ADV:
+PAG8:
+COLOR 0,7
+PRINT "      EPISODIO OITAVO - LEVE OS SEUS SOLDADOS ATE' A BATALHA"
+COLOR 7,0
+PRINT "  Voce deve ir em frente...deve levar todos os seus soldados ate'"
+PRINT "a linha,pois a vitoria e' sua..."
+PRINT "Quando se e' atacado,devemos nos defender..."
+PRINT "Defenda-se com suas melhores armas pois caso contrario voce ira'"
+PRINT "perder...A inactividade sera' derrota,mas a simples ida ao campo"
+PRINT "fara' com que a vitoria seja sua...naturalmente."
+PRINT "Nao tenha medo,pois as Deusas do destino estao ao seu favor..."
+PRINT "ADIANTE!"
+GOTO ADV:
+PAG9:
+COLOR 0,7
+PRINT "      EPISODIO NONO -  ESPLENDOR                            "
+COLOR 7,0
+PRINT "  A beleza da queda de uma folhinha ao vento faz voce pensar em "
+PRINT "como e' bonita a natureza...O vento desenha uma rota fantastica"
+PRINT "que faz a folhinha rodopiar majestosamente."
+PRINT "A vida e' assim...Temos que ENTENDER a beleza."
+PRINT "Criticas sao falta de compreensao."
+PRINT "Feiura e' falta de visao."
+PRINT "E' preciso uma nitidez de espirito magnifica para entender o quanto"
+PRINT "as coisas sao belas."
+PRINT "E' preciso alma propria para ser-se belo."
+GOTO ADV:
+PAG10:
+COLOR 0,7
+PRINT "     EPISODIO DECIMO - ARREPENDIMENTO                       "
+COLOR 7,0
+PRINT "  As lagrimas rolam...Se sente arrependido..."
+PRINT "Lembre-se que se voce esta' arrependido do que fez,e esta disposto"
+PRINT "a corrigir o erro,voce ja' esta' perdoado."
+PRINT "Existe uma pessoa dentro de voce para cada momento."
+PRINT "Voce nao sabia,voce nao via,geralmente essa e' a razao de um"
+PRINT "acto practicado no passado."
+PRINT "AGORA VOCE JA'SABE,VOCE JA' VE...e' diferente..."
+PRINT "Se possivel,procure esclarecer o que fez...Se nao for..."
+PRINT "esclareca seu coracao e diga-lhe que voce errou e esta' arrependido."
+GOTO ADV:
+PAG11:
+COLOR 0,7
+PRINT "    EPISODIO DECIMO PRIMEIRO - FALAR A VERDADE              "
+COLOR 7,0
+PRINT "  Fale o que o seu coracao sente se isso nao o prejudica."
+PRINT "VOCE SENTIRA' QUE E' O MOMENTO."
+PRINT "Ouca o seu corpo.Ele envia milhoes de sinais quase imperceptiveis"
+PRINT "avisando o momento certo,avisando o que fazer."
+PRINT" Fale o que sente para quem sente que voce deve falar."
+PRINT "Talvez alguem precise dessa palavra,dessa verdade."
+PRINT "VOCE VAI SENTIR.Confie em algo dentro de voce."
+PRINT "Mas parece que e' o momento pode ser agora..."
+PRINT "Va' e nao tenha medo...FALE!"
+GOTO ADV:
+PAG12:
+COLOR 0,7
+PRINT "    EPISODIO DECIMO SEGUNDO - FUGIR DE FANTASMAS            "
+COLOR 7,0
+PRINT "  Nao devemos fugir de fantasmas..."
+PRINT " O medo e' o nada tentando ser algo. Voce nao deve fugir."
+PRINT " Nao deve sentir o sabor da derrota sem ter ido `a batalha."
+PRINT "A isso chamamos de LAGRIMAS DE SANGUE."
+PRINT "Nao se arrependa depois por nao ter feito nada."
+PRINT "Nao se de desculpas,nao minta para si mesmo,tentando arranjar"
+PRINT "Alibis para sua inaccao."
+PRINT "NAO EXISTEM FANTASMAS se nao estivermos dispostos a ve-los."
+GOTO ADV:
+PAG13:
+COLOR 0,7
+PRINT "    EPISODIO DECIMO TERCEIRO - O PERIGO E' UM ABISMO        "
+COLOR 7,0
+PRINT "  Nao va'."
+PRINT "O perigo esta' na sua frente e voce nao consegue ve-lo."
+PRINT "A morte e' invisivel tambem..."
+PRINT "A curiosidade mata...volte para tras...Nao pense no que voce pensou."
+PRINT "RECUE."
+PRINT "Abandone o que voce esta' fazendo."
+PRINT "NAO AJA DESTA MANEIRA."
+PRINT "O ABISMO ESTA' `A FRENTE,perto de uma linda roseira."
+PRINT "E nunca ninguem pegou uma rosa desta roseira e viveu para contar"
+PRINT "ou se gabar para os outros...O PREMIO NAO VALE O ESFORCO."
+GOTO ADV:
+PAG14:
+COLOR 0,7
+PRINT "   EPISODIO DECIMO QUARTO - TESOURO ESCONDIDO               "
+COLOR 7,0
+PRINT "  Ha' riquezas onde voce pisa..."
+PRINT "Voce pode ficar rico se der atencao aos seus pes..."
+PRINT "Ha' boas coisas que vem a caminho..."
+PRINT "So' tome cuidado pois podem haver salteadores atras das arvores."
+PRINT "Mas tudo indica que havera' um banquete apos isto,pois"
+PRINT "ha' riquezas no horizonte..."
+PRINT "BOA SORTE..."
+GOTO ADV:
+PAG15:
+COLOR 0,7
+PRINT "  EPISODIO DECIMO QUINTO - A METAMORFOSE                    "
+COLOR 7,0
+PRINT "  Tudo esta' mudando pouco a pouco."
+PRINT "Nada sera' igual ao que e' hoje."
+PRINT "Prepare-se para a mudanca...Ela sera' lenta mas acontecera'."
+PRINT "Voce deve mudar para nao acabar..."
+PRINT "Pegue seu barco e espere pelo vento das mudancas."
+PRINT "O que voce pensa que ira' acontecer nao ira' ser como pensa."
+PRINT "MUDANCAS VIRAO."
+GOTO ADV:
+PAG16:
+COLOR 0,7
+PRINT "   EPISODIO DECIMO SEXTO -  OS DOIS CAMINHOS                "
+COLOR 7,0
+PRINT "  Voce devera' escolher entre dois caminhos..."
+PRINT "VOCE TERA' QUE ESCOLHER."
+PRINT "O outro morrera' para sempre para voce..."
+PRINT "E' a decisao final...ESQUERDA OU DIREITA?"
+PRINT "Nao adianta mais ficar adiando certas decisoes que VOCE SABE"
+PRINT "que devem ser tomadas...CHEGOU A HORA."
+PRINT "E agora ninguem pode te ajudar a nao ser voce mesmo..."
+GOTO ADV:
+PAG17:
+COLOR 0,7
+PRINT "   EPISODIO DECIMO SETIMO  - A FORCA                        "
+COLOR 7,0
+PRINT "  Um periodo de sacrificio esta' vindo e voce deve esperar."
+PRINT "Embora por vezes voce pense que nao e' justo,voce deve continuar."
+PRINT "Ele vale a pena...E' o preco por algo que voce quer muito."
+PRINT "Se voce quer REALMENTE o que voce quer voce deve pagar este preco."
+PRINT "Nao e' nada perene! E' apenas um periodo,uma porta para algo melhor"
+GOTO ADV:
+PAG18:
+COLOR 0,7
+PRINT "   EPISODIO DECIMO OITAVO - A TARDE                         "
+COLOR 7,0
+PRINT "  O dia iluminado ja' se foi e a noite sera' o proximo estagio."
+PRINT "E' conveniente se preparar pois o nevoeiro gelado vira'."
+PRINT "Nada de mais...Um ciclo."
+PRINT "Os passaros ja' estao indo. Os animais se escondem."
+PRINT "Logo as bestas da noite irao aparecer."
+PRINT "A unica coisa necessaria e' se preparar."
+PRINT "Arranje onde ficar. E fique ate' a noite passar..."
+PRINT "Saiba interpretar todos os sinais...Veja: A tarde e' sinal de"
+PRINT "Noite proxima!!"
+
+GOTO ADV:
+PAG19:
+COLOR 0,7
+PRINT "   EPISODIO DECIMO NONO - NAO HA' MEDO DENTRO DE UM TEMPLO  "
+COLOR 7,0
+PRINT "  Nao ha' razao para medo...A vitoria esta' nas maos...A natureza"
+PRINT "aje a seu favor...Nao ha' razao para medo...Va',faca!"
+PRINT "Nao ha' medo dentro de um templo...Voce esta' no templo da na-"
+PRINT "tureza...Os ceus te protejem!"
+PRINT " Nao ha' erro! VA!"
+GOTO ADV:
+PAG20:
+COLOR 0,7
+PRINT "   EPISODIO VIGESIMO - SO' QUANDO PERDEMOS E' QUE SABEMOS   "
+COLOR 7,0
+PRINT "  Nao cometa o erro de se livrar do que voce pensa que nao quer mais"
+PRINT "So' quando perdemos e' que sabemos a falta que as coisas fazem."
+PRINT "Analise e pense...Nao faca nada que possa se arrepender depois..."
+PRINT "E' aconselhavel pensar mil vezes e depois mais mil..."
+PRINT "E' provavel que voce precise mais dessa coisa do que a coisa "
+PRINT "precise de voce...ABRA OS OLHOS!Nao va' por conselhos!"
+GOTO ADV:
+ADV:
+LOCATE 20,1
+COLOR 0,7
+PRINT "           >>>>>> FIM DE CONSULTA <<<<<<                      "
+GOTO KK:
+EXI:
+CLS
+COLOR 0,7
+PRINT " NOTA:                                                      "
+COLOR 7,0
+PRINT
+
+PRINT "    CASO VOCE DESEJE OBTER A VERSAO COMPLETA DO PROGRAMA VOCE"
+PRINT "    DEVE SE CADASTRAR COM O AUTOR."
+PRINT "    PARA ISSO VEJA OS DADOS EM 'SOBRE O PROGRAMA(DOR)' NAS OPCOES"
+PRINT "    DO MENU DESTE MESMO PROGRAMA.TELEFONE OU ESCREVA."
+PRINT "    BOA SORTE..."
+
+PRINT
+PRINT "    IF YOU WISH TO RECEIVE THE ENGLISH VERSION OF THIS PROGRAM"
+PRINT "    YOU SHALL REGISTER YOURSELF WITH THE AUTHOR."
+PRINT "    TO DO THIS,CHECK OPTION 3 OF THE MAIN MENU AND"
+PRINT "    PLEASE WRITE TO ME...I WANT TO KNOW YOUR OPINION!"
+XX:
+X$=INKEY$
+   IF X$="" THEN XX:
+CLS
+PRINT "            ±±±±±±   ±   ±  ±±±±±"
+PRINT "  NDLab     ±     ±   ± ±   ±"
+PRINT "            ±±±±±±     ±    ±±±± ±    ±       ±             ±"
+PRINT "   1995     ±     ±    ±    ±                     NDLab"
+PRINT "            ±±±±±±     ±    ±±±±±           Only Strangeware!"
+FOR I=1 TO 2000
+NEXT I
+
+
